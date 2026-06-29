@@ -1,0 +1,23 @@
+{
+  "flight": {
+    "domestic": 800,
+    "international": 2500
+  },
+  "hotel": {
+    "domestic_per_night": 200,
+    "international_per_night": 350
+  },
+  "meals": {
+    "per_day": 75,
+    "single_meal_max": 50
+  },
+  "transport": {
+    "per_day": 100
+  },
+  "conference": {
+    "registration_max": 1500
+  },
+  "miscellaneous": {
+    "per_trip": 150
+  }
+}

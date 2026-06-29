@@ -1,0 +1,43 @@
+{
+  "decision": {
+    "claim_id": "CLM-2025-005",
+    "decision": "approve",
+    "confidence_score": 0.90,
+    "overall_reasoning": "All expenses comply with international travel policy. Business class flight ($2200) is within the $2500 international limit and permitted for flights over 8 hours with pre-approval. Hotel at $310/night is within the $350 international per-diem. All meals are within the $75/day limit. Transport and miscellaneous are within limits. All receipts present and matching.",
+    "expense_decisions": [
+      {"category": "flight", "amount": 2200.0, "approved_amount": 2200.0, "status": "approved", "reason": "Within $2500 international limit; business class approved for 10hr+ flight"},
+      {"category": "hotel", "amount": 310.0, "approved_amount": 310.0, "status": "approved", "reason": "Within $350/night international per-diem"},
+      {"category": "hotel", "amount": 310.0, "approved_amount": 310.0, "status": "approved", "reason": "Within $350/night international per-diem"},
+      {"category": "hotel", "amount": 310.0, "approved_amount": 310.0, "status": "approved", "reason": "Within $350/night international per-diem"},
+      {"category": "hotel", "amount": 310.0, "approved_amount": 310.0, "status": "approved", "reason": "Within $350/night international per-diem"},
+      {"category": "meals", "amount": 65.0, "approved_amount": 65.0, "status": "approved", "reason": "Within $75/day meal allowance"},
+      {"category": "meals", "amount": 70.0, "approved_amount": 70.0, "status": "approved", "reason": "Within $75/day meal allowance"},
+      {"category": "meals", "amount": 58.0, "approved_amount": 58.0, "status": "approved", "reason": "Within $75/day meal allowance"},
+      {"category": "meals", "amount": 72.0, "approved_amount": 72.0, "status": "approved", "reason": "Within $75/day meal allowance"},
+      {"category": "transport", "amount": 95.0, "approved_amount": 95.0, "status": "approved", "reason": "Within $100/day transport limit"},
+      {"category": "miscellaneous", "amount": 40.0, "approved_amount": 40.0, "status": "approved", "reason": "Within $150/trip miscellaneous limit; business phone plan is reimbursable"}
+    ],
+    "policy_references": [
+      {"section": "Flight Policy", "content_snippet": "Business class is permitted for international flights exceeding 8 hours with manager pre-approval", "relevance_score": 0.93},
+      {"section": "Hotel Policy", "content_snippet": "International per-diem hotel rate is $350 per night", "relevance_score": 0.91},
+      {"section": "Approval Thresholds", "content_snippet": "International travel requires additional travel desk sign-off regardless of amount", "relevance_score": 0.85}
+    ],
+    "total_approved_amount": 3840.0,
+    "flags": ["international_travel_desk_required"],
+    "requires_additional_info": []
+  },
+  "audit_trail": {
+    "retrieved_chunks": ["[Flight Policy]: Business class is permitted for international flights...", "[Hotel Policy]: International per-diem hotel rate is $350 per night...", "[Approval Thresholds]: International travel requires additional travel desk..."],
+    "tools_executed": ["receipt_validator", "expense_limit_checker", "duplicate_checker", "approval_matrix"],
+    "tool_outputs": {
+      "receipt_validation": {"all_valid": true, "valid_count": 11, "missing_receipts": [], "mismatched_amounts": [], "total_issues": 0},
+      "expense_limit_result": {"all_compliant": true, "violations": [], "compliant_count": 11, "total_overage": 0.0},
+      "duplicate_check": {"is_duplicate": false, "confidence": 0.0, "similar_claims": [], "reason": "No claim history available"},
+      "approval_matrix": {"total_amount": 3840.0, "required_level": "vp", "auto_approve": false, "special_rules": ["International travel requires travel_desk approval"], "reason": "Amount $3840.00 requires vp approval"}
+    },
+    "llm_prompt": "[truncated for display]",
+    "llm_raw_response": "[truncated for display]",
+    "retry_count": 0,
+    "processing_time_ms": 19200.0
+  }
+}

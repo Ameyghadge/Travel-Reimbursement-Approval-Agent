@@ -1,0 +1,39 @@
+{
+  "decision": {
+    "claim_id": "CLM-2025-003",
+    "decision": "reject",
+    "confidence_score": 0.88,
+    "overall_reasoning": "Multiple policy violations: First class domestic flight ($950 exceeds $800 limit and first class not permitted), hotel receipts missing for 3 nights ($960 total without documentation), spa expense ($250) is explicitly non-reimbursable, meals exceed daily limit and description mentions alcohol which is non-reimbursable, limo service ($150) exceeds $100/day transport limit.",
+    "expense_decisions": [
+      {"category": "flight", "amount": 950.0, "approved_amount": 0.0, "status": "rejected", "reason": "First class not reimbursable per policy; exceeds $800 domestic limit"},
+      {"category": "hotel", "amount": 320.0, "approved_amount": 0.0, "status": "rejected", "reason": "No receipt attached; exceeds $200/night domestic limit"},
+      {"category": "hotel", "amount": 320.0, "approved_amount": 0.0, "status": "rejected", "reason": "No receipt attached; exceeds $200/night domestic limit"},
+      {"category": "hotel", "amount": 320.0, "approved_amount": 0.0, "status": "rejected", "reason": "No receipt attached; exceeds $200/night domestic limit"},
+      {"category": "meals", "amount": 180.0, "approved_amount": 0.0, "status": "rejected", "reason": "Exceeds $75/day limit; description mentions alcohol which is non-reimbursable"},
+      {"category": "miscellaneous", "amount": 250.0, "approved_amount": 0.0, "status": "rejected", "reason": "Spa treatment is explicitly non-reimbursable per policy"},
+      {"category": "transport", "amount": 150.0, "approved_amount": 0.0, "status": "rejected", "reason": "Limo service exceeds $100/day transport limit; luxury transport not standard"}
+    ],
+    "policy_references": [
+      {"section": "Non-Reimbursable Expenses", "content_snippet": "Personal entertainment (movies, spa, gym) are never reimbursable", "relevance_score": 0.94},
+      {"section": "Flight Policy", "content_snippet": "First class travel is not reimbursable unless medically necessary", "relevance_score": 0.92},
+      {"section": "Documentation Requirements", "content_snippet": "Receipts are required for individual expenses over $25", "relevance_score": 0.88}
+    ],
+    "total_approved_amount": 0.0,
+    "flags": ["first_class_flight", "missing_receipts", "non_reimbursable_spa", "alcohol_mentioned", "luxury_transport"],
+    "requires_additional_info": []
+  },
+  "audit_trail": {
+    "retrieved_chunks": ["[Non-Reimbursable Expenses]: Personal entertainment...", "[Flight Policy]: First class travel is not reimbursable...", "[Documentation Requirements]: Receipts are required..."],
+    "tools_executed": ["receipt_validator", "expense_limit_checker", "duplicate_checker", "approval_matrix"],
+    "tool_outputs": {
+      "receipt_validation": {"all_valid": false, "valid_count": 4, "missing_receipts": [{"expense_description": "Resort room night 1", "amount": 320.0, "issue_type": "missing_receipt", "severity": "error"}], "mismatched_amounts": [], "total_issues": 3},
+      "expense_limit_result": {"all_compliant": false, "violations": [{"category": "flight", "amount": 950.0, "limit": 800.0, "overage": 150.0, "severity": "error"}], "compliant_count": 2, "total_overage": 720.0},
+      "duplicate_check": {"is_duplicate": false, "confidence": 0.0, "similar_claims": [], "reason": "No claim history available"},
+      "approval_matrix": {"total_amount": 2490.0, "required_level": "vp", "auto_approve": false, "special_rules": ["Conference expenses require pre-approval"], "reason": "Amount $2490.00 requires vp approval"}
+    },
+    "llm_prompt": "[truncated for display]",
+    "llm_raw_response": "[truncated for display]",
+    "retry_count": 0,
+    "processing_time_ms": 16800.0
+  }
+}

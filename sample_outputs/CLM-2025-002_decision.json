@@ -1,0 +1,39 @@
+{
+  "decision": {
+    "claim_id": "CLM-2025-002",
+    "decision": "partially_approve",
+    "confidence_score": 0.85,
+    "overall_reasoning": "Most expenses are compliant, but hotel rate of $289/night exceeds the $200 domestic per-diem by $89/night ($267 total overage for 3 nights). Client dinner at $95 exceeds the $75 daily meal limit. Flight and transport are within limits. All receipts present.",
+    "expense_decisions": [
+      {"category": "flight", "amount": 650.0, "approved_amount": 650.0, "status": "approved", "reason": "Within $800 domestic flight limit"},
+      {"category": "hotel", "amount": 289.0, "approved_amount": 200.0, "status": "reduced", "reason": "Exceeds $200/night domestic limit; approved at policy maximum"},
+      {"category": "hotel", "amount": 289.0, "approved_amount": 200.0, "status": "reduced", "reason": "Exceeds $200/night domestic limit; approved at policy maximum"},
+      {"category": "hotel", "amount": 289.0, "approved_amount": 200.0, "status": "reduced", "reason": "Exceeds $200/night domestic limit; approved at policy maximum"},
+      {"category": "meals", "amount": 95.0, "approved_amount": 75.0, "status": "reduced", "reason": "Exceeds $75/day meal allowance; approved at policy maximum"},
+      {"category": "meals", "amount": 72.0, "approved_amount": 72.0, "status": "approved", "reason": "Within $75/day meal allowance"},
+      {"category": "meals", "amount": 68.0, "approved_amount": 68.0, "status": "approved", "reason": "Within $75/day meal allowance"},
+      {"category": "transport", "amount": 85.0, "approved_amount": 85.0, "status": "approved", "reason": "Within $100/day transport limit"}
+    ],
+    "policy_references": [
+      {"section": "Hotel Policy", "content_snippet": "Domestic per-diem hotel rate is $200 per night", "relevance_score": 0.91},
+      {"section": "Meals Policy", "content_snippet": "Daily meal allowance is $75 per day for all travel", "relevance_score": 0.88}
+    ],
+    "total_approved_amount": 1550.0,
+    "flags": ["hotel_over_limit", "meals_over_limit"],
+    "requires_additional_info": []
+  },
+  "audit_trail": {
+    "retrieved_chunks": ["[Hotel Policy]: Domestic per-diem hotel rate is $200 per night...", "[Meals Policy]: Daily meal allowance is $75 per day...", "[Approval Thresholds]: Claims from $501 to $2,000 require director..."],
+    "tools_executed": ["receipt_validator", "expense_limit_checker", "duplicate_checker", "approval_matrix"],
+    "tool_outputs": {
+      "receipt_validation": {"all_valid": true, "valid_count": 8, "missing_receipts": [], "mismatched_amounts": [], "total_issues": 0},
+      "expense_limit_result": {"all_compliant": false, "violations": [{"category": "hotel", "amount": 289.0, "limit": 200.0, "overage": 89.0, "severity": "error"}], "compliant_count": 5, "total_overage": 267.0},
+      "duplicate_check": {"is_duplicate": false, "confidence": 0.0, "similar_claims": [], "reason": "No claim history available"},
+      "approval_matrix": {"total_amount": 1837.0, "required_level": "director", "auto_approve": true, "special_rules": [], "reason": "Amount $1837.00 requires director approval"}
+    },
+    "llm_prompt": "[truncated for display]",
+    "llm_raw_response": "[truncated for display]",
+    "retry_count": 0,
+    "processing_time_ms": 18400.0
+  }
+}

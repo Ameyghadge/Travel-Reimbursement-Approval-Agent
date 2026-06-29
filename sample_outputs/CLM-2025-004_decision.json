@@ -1,0 +1,36 @@
+{
+  "decision": {
+    "claim_id": "CLM-2025-004",
+    "decision": "manual_review",
+    "confidence_score": 0.45,
+    "overall_reasoning": "This claim requires manual review due to multiple procedural issues: (1) Trip was not pre-approved per policy requirement, (2) Flight receipt missing for $480 expense which exceeds the $75 threshold requiring manager exception approval, (3) Dinner receipt missing for $42 (within $25-$75 range where declaration is acceptable). The emergency nature of the trip may justify policy exceptions but requires human judgment and documented after-the-fact approval.",
+    "expense_decisions": [
+      {"category": "flight", "amount": 480.0, "approved_amount": 0.0, "status": "rejected", "reason": "Receipt missing for amount over $75; requires manager exception approval"},
+      {"category": "hotel", "amount": 165.0, "approved_amount": 165.0, "status": "approved", "reason": "Within $200/night limit; receipt present"},
+      {"category": "meals", "amount": 42.0, "approved_amount": 0.0, "status": "rejected", "reason": "Receipt missing; signed declaration needed for $25-$75 range"},
+      {"category": "meals", "amount": 38.0, "approved_amount": 38.0, "status": "approved", "reason": "Within daily limit; receipt present"},
+      {"category": "transport", "amount": 55.0, "approved_amount": 55.0, "status": "approved", "reason": "Within $100/day limit; receipt present"}
+    ],
+    "policy_references": [
+      {"section": "General Principles", "content_snippet": "All business travel must be pre-approved by the employee's direct manager", "relevance_score": 0.93},
+      {"section": "Documentation Requirements", "content_snippet": "Missing receipts for expenses over $75 require manager exception approval", "relevance_score": 0.90}
+    ],
+    "total_approved_amount": 258.0,
+    "flags": ["no_pre_approval", "missing_flight_receipt", "emergency_travel_claimed"],
+    "requires_additional_info": ["Written confirmation of after-the-fact manager approval", "Flight receipt or manager exception approval for $480", "Signed declaration for $42 dinner without receipt"]
+  },
+  "audit_trail": {
+    "retrieved_chunks": ["[General Principles]: All business travel must be pre-approved...", "[Documentation Requirements]: Receipts are required for expenses over $25...", "[Duplicate and Fraud Prevention]: Submitting the same expense..."],
+    "tools_executed": ["receipt_validator", "expense_limit_checker", "duplicate_checker", "approval_matrix"],
+    "tool_outputs": {
+      "receipt_validation": {"all_valid": false, "valid_count": 3, "missing_receipts": [{"expense_description": "Last-minute flight SFO to DEN", "amount": 480.0, "issue_type": "missing_receipt", "severity": "error"}, {"expense_description": "Dinner", "amount": 42.0, "issue_type": "missing_receipt", "severity": "warning"}], "mismatched_amounts": [], "total_issues": 2},
+      "expense_limit_result": {"all_compliant": true, "violations": [], "compliant_count": 5, "total_overage": 0.0},
+      "duplicate_check": {"is_duplicate": false, "confidence": 0.0, "similar_claims": [], "reason": "No claim history available"},
+      "approval_matrix": {"total_amount": 780.0, "required_level": "director", "auto_approve": true, "special_rules": [], "reason": "Amount $780.00 requires director approval (auto-approve eligible)"}
+    },
+    "llm_prompt": "[truncated for display]",
+    "llm_raw_response": "[truncated for display]",
+    "retry_count": 0,
+    "processing_time_ms": 14600.0
+  }
+}

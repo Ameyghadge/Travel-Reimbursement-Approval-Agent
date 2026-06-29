@@ -1,0 +1,75 @@
+{
+  "claim_id": "CLM-2025-001",
+  "employee": {
+    "employee_id": "EMP-101",
+    "name": "Alice Johnson",
+    "department": "Engineering",
+    "level": "senior"
+  },
+  "trip": {
+    "destination": "Austin, TX",
+    "purpose": "Team offsite and sprint planning",
+    "start_date": "2025-03-10",
+    "end_date": "2025-03-12",
+    "is_international": false
+  },
+  "expenses": [
+    {
+      "date": "2025-03-10",
+      "category": "flight",
+      "amount": 420.00,
+      "currency": "USD",
+      "vendor": "United Airlines",
+      "description": "Round-trip SFO to AUS",
+      "receipt": {"has_receipt": true, "receipt_format": "digital", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-03-10",
+      "category": "hotel",
+      "amount": 175.00,
+      "currency": "USD",
+      "vendor": "Marriott Downtown",
+      "description": "2 nights at $175/night (showing 1 night)",
+      "receipt": {"has_receipt": true, "receipt_format": "pdf", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-03-11",
+      "category": "hotel",
+      "amount": 175.00,
+      "currency": "USD",
+      "vendor": "Marriott Downtown",
+      "description": "Night 2",
+      "receipt": {"has_receipt": true, "receipt_format": "pdf", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-03-10",
+      "category": "meals",
+      "amount": 55.00,
+      "currency": "USD",
+      "vendor": "Various restaurants",
+      "description": "Day 1 meals",
+      "receipt": {"has_receipt": true, "receipt_format": "image", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-03-11",
+      "category": "meals",
+      "amount": 62.00,
+      "currency": "USD",
+      "vendor": "Various restaurants",
+      "description": "Day 2 meals including team lunch",
+      "receipt": {"has_receipt": true, "receipt_format": "image", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-03-10",
+      "category": "transport",
+      "amount": 45.00,
+      "currency": "USD",
+      "vendor": "Uber",
+      "description": "Airport to hotel and hotel to office",
+      "receipt": {"has_receipt": true, "receipt_format": "digital", "receipt_amount_matches": true}
+    }
+  ],
+  "total_amount": 932.00,
+  "notes": "Pre-approved team offsite for Q2 sprint planning.",
+  "submitted_at": "2025-03-15T09:00:00Z"
+}

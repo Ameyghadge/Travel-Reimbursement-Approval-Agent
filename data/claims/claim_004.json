@@ -1,0 +1,66 @@
+{
+  "claim_id": "CLM-2025-004",
+  "employee": {
+    "employee_id": "EMP-418",
+    "name": "James Park",
+    "department": "Engineering",
+    "level": "junior"
+  },
+  "trip": {
+    "destination": "Denver, CO",
+    "purpose": "Customer support escalation - on-site troubleshooting",
+    "start_date": "2025-05-20",
+    "end_date": "2025-05-21",
+    "is_international": false
+  },
+  "expenses": [
+    {
+      "date": "2025-05-20",
+      "category": "flight",
+      "amount": 480.00,
+      "currency": "USD",
+      "vendor": "Southwest Airlines",
+      "description": "Last-minute flight SFO to DEN",
+      "receipt": {"has_receipt": false, "receipt_format": null, "receipt_amount_matches": null}
+    },
+    {
+      "date": "2025-05-20",
+      "category": "hotel",
+      "amount": 165.00,
+      "currency": "USD",
+      "vendor": "Hyatt Place Denver",
+      "description": "1 night stay",
+      "receipt": {"has_receipt": true, "receipt_format": "pdf", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-05-20",
+      "category": "meals",
+      "amount": 42.00,
+      "currency": "USD",
+      "vendor": "Local restaurant",
+      "description": "Dinner",
+      "receipt": {"has_receipt": false, "receipt_format": null, "receipt_amount_matches": null}
+    },
+    {
+      "date": "2025-05-21",
+      "category": "meals",
+      "amount": 38.00,
+      "currency": "USD",
+      "vendor": "Cafe",
+      "description": "Lunch with customer team",
+      "receipt": {"has_receipt": true, "receipt_format": "image", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-05-20",
+      "category": "transport",
+      "amount": 55.00,
+      "currency": "USD",
+      "vendor": "Lyft",
+      "description": "Airport to hotel and customer site rides",
+      "receipt": {"has_receipt": true, "receipt_format": "digital", "receipt_amount_matches": true}
+    }
+  ],
+  "total_amount": 780.00,
+  "notes": "Emergency trip - production system down at customer site. No time for pre-approval. Manager Bob Smith verbally approved after the fact.",
+  "submitted_at": "2025-06-01T10:00:00Z"
+}

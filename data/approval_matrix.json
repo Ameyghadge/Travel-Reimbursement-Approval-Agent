@@ -1,0 +1,12 @@
+{
+  "thresholds": [
+    {"max_amount": 500, "required_level": "manager", "auto_approve": true},
+    {"max_amount": 2000, "required_level": "director", "auto_approve": true},
+    {"max_amount": 5000, "required_level": "vp", "auto_approve": false},
+    {"max_amount": null, "required_level": "cfo", "auto_approve": false}
+  ],
+  "special_rules": {
+    "international": {"additional_approval": "travel_desk"},
+    "conference": {"requires_pre_approval": true}
+  }
+}

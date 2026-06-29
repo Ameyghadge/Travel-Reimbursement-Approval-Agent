@@ -1,0 +1,120 @@
+{
+  "claim_id": "CLM-2025-005",
+  "employee": {
+    "employee_id": "EMP-520",
+    "name": "Sarah Kim",
+    "department": "Finance",
+    "level": "director"
+  },
+  "trip": {
+    "destination": "London, UK",
+    "purpose": "International finance team quarterly sync and audit prep",
+    "start_date": "2025-06-02",
+    "end_date": "2025-06-06",
+    "is_international": true
+  },
+  "expenses": [
+    {
+      "date": "2025-06-02",
+      "category": "flight",
+      "amount": 2200.00,
+      "currency": "USD",
+      "vendor": "British Airways",
+      "description": "Business class round-trip SFO to LHR (10hr flight)",
+      "receipt": {"has_receipt": true, "receipt_format": "digital", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-06-02",
+      "category": "hotel",
+      "amount": 310.00,
+      "currency": "USD",
+      "vendor": "Premier Inn London City",
+      "description": "Night 1",
+      "receipt": {"has_receipt": true, "receipt_format": "pdf", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-06-03",
+      "category": "hotel",
+      "amount": 310.00,
+      "currency": "USD",
+      "vendor": "Premier Inn London City",
+      "description": "Night 2",
+      "receipt": {"has_receipt": true, "receipt_format": "pdf", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-06-04",
+      "category": "hotel",
+      "amount": 310.00,
+      "currency": "USD",
+      "vendor": "Premier Inn London City",
+      "description": "Night 3",
+      "receipt": {"has_receipt": true, "receipt_format": "pdf", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-06-05",
+      "category": "hotel",
+      "amount": 310.00,
+      "currency": "USD",
+      "vendor": "Premier Inn London City",
+      "description": "Night 4",
+      "receipt": {"has_receipt": true, "receipt_format": "pdf", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-06-02",
+      "category": "meals",
+      "amount": 65.00,
+      "currency": "USD",
+      "vendor": "Various",
+      "description": "Day 1 meals",
+      "receipt": {"has_receipt": true, "receipt_format": "image", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-06-03",
+      "category": "meals",
+      "amount": 70.00,
+      "currency": "USD",
+      "vendor": "Various",
+      "description": "Day 2 meals + team dinner",
+      "receipt": {"has_receipt": true, "receipt_format": "image", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-06-04",
+      "category": "meals",
+      "amount": 58.00,
+      "currency": "USD",
+      "vendor": "Various",
+      "description": "Day 3 meals",
+      "receipt": {"has_receipt": true, "receipt_format": "image", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-06-05",
+      "category": "meals",
+      "amount": 72.00,
+      "currency": "USD",
+      "vendor": "Various",
+      "description": "Day 4 meals",
+      "receipt": {"has_receipt": true, "receipt_format": "image", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-06-02",
+      "category": "transport",
+      "amount": 95.00,
+      "currency": "USD",
+      "vendor": "Heathrow Express + TfL",
+      "description": "Airport transfer and tube passes for 4 days",
+      "receipt": {"has_receipt": true, "receipt_format": "digital", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-06-03",
+      "category": "miscellaneous",
+      "amount": 40.00,
+      "currency": "USD",
+      "vendor": "Vodafone",
+      "description": "International phone plan add-on",
+      "receipt": {"has_receipt": true, "receipt_format": "digital", "receipt_amount_matches": true}
+    }
+  ],
+  "total_amount": 3840.00,
+  "notes": "Quarterly finance sync with London team. Business class pre-approved by VP for 10-hour flight per policy. All amounts converted to USD at date-of-expense rates.",
+  "submitted_at": "2025-06-10T08:00:00Z"
+}

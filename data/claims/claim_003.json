@@ -1,0 +1,84 @@
+{
+  "claim_id": "CLM-2025-003",
+  "employee": {
+    "employee_id": "EMP-312",
+    "name": "Emily Watson",
+    "department": "Marketing",
+    "level": "senior"
+  },
+  "trip": {
+    "destination": "Las Vegas, NV",
+    "purpose": "Marketing conference - AdTech Summit",
+    "start_date": "2025-05-05",
+    "end_date": "2025-05-08",
+    "is_international": false
+  },
+  "expenses": [
+    {
+      "date": "2025-05-05",
+      "category": "flight",
+      "amount": 950.00,
+      "currency": "USD",
+      "vendor": "American Airlines",
+      "description": "First class flight LAX to LAS",
+      "receipt": {"has_receipt": true, "receipt_format": "digital", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-05-05",
+      "category": "hotel",
+      "amount": 320.00,
+      "currency": "USD",
+      "vendor": "Bellagio Hotel",
+      "description": "Resort room night 1",
+      "receipt": {"has_receipt": false, "receipt_format": null, "receipt_amount_matches": null}
+    },
+    {
+      "date": "2025-05-06",
+      "category": "hotel",
+      "amount": 320.00,
+      "currency": "USD",
+      "vendor": "Bellagio Hotel",
+      "description": "Resort room night 2",
+      "receipt": {"has_receipt": false, "receipt_format": null, "receipt_amount_matches": null}
+    },
+    {
+      "date": "2025-05-07",
+      "category": "hotel",
+      "amount": 320.00,
+      "currency": "USD",
+      "vendor": "Bellagio Hotel",
+      "description": "Resort room night 3",
+      "receipt": {"has_receipt": false, "receipt_format": null, "receipt_amount_matches": null}
+    },
+    {
+      "date": "2025-05-06",
+      "category": "meals",
+      "amount": 180.00,
+      "currency": "USD",
+      "vendor": "Prime Steakhouse",
+      "description": "Dinner with potential partners (includes alcohol)",
+      "receipt": {"has_receipt": true, "receipt_format": "image", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-05-07",
+      "category": "miscellaneous",
+      "amount": 250.00,
+      "currency": "USD",
+      "vendor": "Bellagio Spa",
+      "description": "Spa treatment and wellness",
+      "receipt": {"has_receipt": true, "receipt_format": "image", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-05-05",
+      "category": "transport",
+      "amount": 150.00,
+      "currency": "USD",
+      "vendor": "VIP Limo Service",
+      "description": "Limo airport to hotel",
+      "receipt": {"has_receipt": true, "receipt_format": "digital", "receipt_amount_matches": true}
+    }
+  ],
+  "total_amount": 2490.00,
+  "notes": "Great conference, made valuable contacts.",
+  "submitted_at": "2025-05-15T11:00:00Z"
+}

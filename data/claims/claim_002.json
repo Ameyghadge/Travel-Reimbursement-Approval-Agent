@@ -1,0 +1,93 @@
+{
+  "claim_id": "CLM-2025-002",
+  "employee": {
+    "employee_id": "EMP-205",
+    "name": "Carlos Rivera",
+    "department": "Sales",
+    "level": "manager"
+  },
+  "trip": {
+    "destination": "New York, NY",
+    "purpose": "Client meetings and sales presentation",
+    "start_date": "2025-04-01",
+    "end_date": "2025-04-04",
+    "is_international": false
+  },
+  "expenses": [
+    {
+      "date": "2025-04-01",
+      "category": "flight",
+      "amount": 650.00,
+      "currency": "USD",
+      "vendor": "Delta Airlines",
+      "description": "Round-trip DEN to JFK",
+      "receipt": {"has_receipt": true, "receipt_format": "digital", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-04-01",
+      "category": "hotel",
+      "amount": 289.00,
+      "currency": "USD",
+      "vendor": "Hilton Midtown",
+      "description": "Night 1 - NYC hotel",
+      "receipt": {"has_receipt": true, "receipt_format": "pdf", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-04-02",
+      "category": "hotel",
+      "amount": 289.00,
+      "currency": "USD",
+      "vendor": "Hilton Midtown",
+      "description": "Night 2 - NYC hotel",
+      "receipt": {"has_receipt": true, "receipt_format": "pdf", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-04-03",
+      "category": "hotel",
+      "amount": 289.00,
+      "currency": "USD",
+      "vendor": "Hilton Midtown",
+      "description": "Night 3 - NYC hotel",
+      "receipt": {"has_receipt": true, "receipt_format": "pdf", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-04-01",
+      "category": "meals",
+      "amount": 95.00,
+      "currency": "USD",
+      "vendor": "Nobu Restaurant",
+      "description": "Client dinner",
+      "receipt": {"has_receipt": true, "receipt_format": "image", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-04-02",
+      "category": "meals",
+      "amount": 72.00,
+      "currency": "USD",
+      "vendor": "Various",
+      "description": "Day 2 meals",
+      "receipt": {"has_receipt": true, "receipt_format": "image", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-04-03",
+      "category": "meals",
+      "amount": 68.00,
+      "currency": "USD",
+      "vendor": "Various",
+      "description": "Day 3 meals",
+      "receipt": {"has_receipt": true, "receipt_format": "image", "receipt_amount_matches": true}
+    },
+    {
+      "date": "2025-04-01",
+      "category": "transport",
+      "amount": 85.00,
+      "currency": "USD",
+      "vendor": "NYC Yellow Cab",
+      "description": "JFK to hotel taxi",
+      "receipt": {"has_receipt": true, "receipt_format": "digital", "receipt_amount_matches": true}
+    }
+  ],
+  "total_amount": 1837.00,
+  "notes": "NYC trip for Q2 client renewals. Hotel rates higher than policy due to late booking.",
+  "submitted_at": "2025-04-08T14:30:00Z"
+}

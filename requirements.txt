@@ -1,0 +1,26 @@
+# Core
+fastapi>=0.104.0
+uvicorn>=0.24.0
+python-dotenv>=1.0.0
+pydantic>=2.5.0
+pydantic-settings>=2.1.0
+
+# LLM
+transformers>=4.37.0
+torch>=2.1.0
+accelerate>=0.25.0
+
+# RAG / Embeddings
+sentence-transformers>=2.2.0
+faiss-cpu>=1.7.4
+
+# Agent
+langgraph>=0.0.40
+langchain-core>=0.1.0
+
+# UI
+streamlit>=1.29.0
+
+# Utilities
+httpx>=0.25.0
+structlog>=23.2.0

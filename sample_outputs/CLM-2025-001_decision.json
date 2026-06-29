@@ -1,0 +1,37 @@
+{
+  "decision": {
+    "claim_id": "CLM-2025-001",
+    "decision": "approve",
+    "confidence_score": 0.92,
+    "overall_reasoning": "All expenses are within policy limits. Flight $420 is under the $800 domestic cap. Hotel at $175/night is within the $200 domestic per-diem. Meals at $55 and $62 are within the $75 daily allowance. Transport at $45 is well under the $100/day limit. All receipts are present and amounts match.",
+    "expense_decisions": [
+      {"category": "flight", "amount": 420.0, "approved_amount": 420.0, "status": "approved", "reason": "Within $800 domestic flight limit"},
+      {"category": "hotel", "amount": 175.0, "approved_amount": 175.0, "status": "approved", "reason": "Within $200/night domestic limit"},
+      {"category": "hotel", "amount": 175.0, "approved_amount": 175.0, "status": "approved", "reason": "Within $200/night domestic limit"},
+      {"category": "meals", "amount": 55.0, "approved_amount": 55.0, "status": "approved", "reason": "Within $75/day meal allowance"},
+      {"category": "meals", "amount": 62.0, "approved_amount": 62.0, "status": "approved", "reason": "Within $75/day meal allowance"},
+      {"category": "transport", "amount": 45.0, "approved_amount": 45.0, "status": "approved", "reason": "Within $100/day transport limit"}
+    ],
+    "policy_references": [
+      {"section": "Flight Policy", "content_snippet": "Maximum reimbursable airfare is $800 for domestic flights", "relevance_score": 0.89},
+      {"section": "Hotel Policy", "content_snippet": "Domestic per-diem hotel rate is $200 per night", "relevance_score": 0.87}
+    ],
+    "total_approved_amount": 932.0,
+    "flags": [],
+    "requires_additional_info": []
+  },
+  "audit_trail": {
+    "retrieved_chunks": ["[Flight Policy]: Economy class is the standard...", "[Hotel Policy]: Domestic per-diem hotel rate is $200...", "[Meals Policy]: Daily meal allowance is $75 per day..."],
+    "tools_executed": ["receipt_validator", "expense_limit_checker", "duplicate_checker", "approval_matrix"],
+    "tool_outputs": {
+      "receipt_validation": {"all_valid": true, "valid_count": 6, "missing_receipts": [], "mismatched_amounts": [], "total_issues": 0},
+      "expense_limit_result": {"all_compliant": true, "violations": [], "compliant_count": 6, "total_overage": 0.0},
+      "duplicate_check": {"is_duplicate": false, "confidence": 0.0, "similar_claims": [], "reason": "No claim history available"},
+      "approval_matrix": {"total_amount": 932.0, "required_level": "director", "auto_approve": true, "special_rules": [], "reason": "Amount $932.00 requires director approval (auto-approve eligible)"}
+    },
+    "llm_prompt": "[truncated for display]",
+    "llm_raw_response": "[truncated for display]",
+    "retry_count": 0,
+    "processing_time_ms": 15200.0
+  }
+}
