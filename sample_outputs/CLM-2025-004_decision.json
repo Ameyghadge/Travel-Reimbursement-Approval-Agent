@@ -2,35 +2,39 @@
   "decision": {
     "claim_id": "CLM-2025-004",
     "decision": "manual_review",
-    "confidence_score": 0.45,
-    "overall_reasoning": "This claim requires manual review due to multiple procedural issues: (1) Trip was not pre-approved per policy requirement, (2) Flight receipt missing for $480 expense which exceeds the $75 threshold requiring manager exception approval, (3) Dinner receipt missing for $42 (within $25-$75 range where declaration is acceptable). The emergency nature of the trip may justify policy exceptions but requires human judgment and documented after-the-fact approval.",
+    "confidence_score": 0.4,
+    "overall_reasoning": "Multiple conflicting factors require human judgment: (1) Trip had no pre-approval — employee claims emergency with verbal after-the-fact approval but no documentation, (2) Flight receipt missing for $480 which exceeds $75 threshold requiring manager exception, (3) Lunch receipt amount does not match claimed amount — employee explains split bill but this cannot be verified automatically, (4) Dinner receipt missing for $42 which is in the $25-$75 declaration range. The emergency exception policy may apply but requires human verification of the circumstances.",
     "expense_decisions": [
-      {"category": "flight", "amount": 480.0, "approved_amount": 0.0, "status": "rejected", "reason": "Receipt missing for amount over $75; requires manager exception approval"},
-      {"category": "hotel", "amount": 165.0, "approved_amount": 165.0, "status": "approved", "reason": "Within $200/night limit; receipt present"},
-      {"category": "meals", "amount": 42.0, "approved_amount": 0.0, "status": "rejected", "reason": "Receipt missing; signed declaration needed for $25-$75 range"},
-      {"category": "meals", "amount": 38.0, "approved_amount": 38.0, "status": "approved", "reason": "Within daily limit; receipt present"},
-      {"category": "transport", "amount": 55.0, "approved_amount": 55.0, "status": "approved", "reason": "Within $100/day limit; receipt present"}
+      {"category": "flight", "amount": 480.0, "approved_amount": 0.0, "status": "rejected", "reason": "Receipt missing; over $75 requires manager exception approval document"},
+      {"category": "hotel", "amount": 165.0, "approved_amount": 165.0, "status": "approved", "reason": "Within $200/night limit; receipt present and matching"},
+      {"category": "meals", "amount": 42.0, "approved_amount": 0.0, "status": "rejected", "reason": "Receipt missing; needs signed declaration ($25-$75 range)"},
+      {"category": "meals", "amount": 38.0, "approved_amount": 0.0, "status": "rejected", "reason": "Receipt amount mismatch; split bill explanation needs human verification"},
+      {"category": "transport", "amount": 55.0, "approved_amount": 55.0, "status": "approved", "reason": "Within $100/day limit; receipt present and matching"}
     ],
     "policy_references": [
       {"section": "General Principles", "content_snippet": "All business travel must be pre-approved by the employee's direct manager", "relevance_score": 0.93},
       {"section": "Documentation Requirements", "content_snippet": "Missing receipts for expenses over $75 require manager exception approval", "relevance_score": 0.90}
     ],
-    "total_approved_amount": 258.0,
-    "flags": ["no_pre_approval", "missing_flight_receipt", "emergency_travel_claimed"],
-    "requires_additional_info": ["Written confirmation of after-the-fact manager approval", "Flight receipt or manager exception approval for $480", "Signed declaration for $42 dinner without receipt"]
+    "total_approved_amount": 220.0,
+    "flags": ["no_pre_approval", "missing_flight_receipt", "receipt_amount_mismatch", "emergency_travel_claimed", "verbal_approval_only"],
+    "requires_additional_info": [
+      "Written confirmation of after-the-fact manager approval",
+      "Flight receipt or signed manager exception for $480",
+      "Signed employee declaration for $42 dinner",
+      "Clarification on lunch split bill with receipt showing different amount"
+    ]
   },
   "audit_trail": {
-    "retrieved_chunks": ["[General Principles]: All business travel must be pre-approved...", "[Documentation Requirements]: Receipts are required for expenses over $25...", "[Duplicate and Fraud Prevention]: Submitting the same expense..."],
+    "retrieved_chunks": ["[General Principles]: All business travel must be pre-approved...", "[Documentation Requirements]: Receipts are required for expenses over $25..."],
     "tools_executed": ["receipt_validator", "expense_limit_checker", "duplicate_checker", "approval_matrix"],
     "tool_outputs": {
-      "receipt_validation": {"all_valid": false, "valid_count": 3, "missing_receipts": [{"expense_description": "Last-minute flight SFO to DEN", "amount": 480.0, "issue_type": "missing_receipt", "severity": "error"}, {"expense_description": "Dinner", "amount": 42.0, "issue_type": "missing_receipt", "severity": "warning"}], "mismatched_amounts": [], "total_issues": 2},
+      "receipt_validation": {"all_valid": false, "valid_count": 2, "missing_receipts": [{"expense_description": "Last-minute flight SFO to DEN", "amount": 480.0, "issue_type": "missing_receipt", "severity": "error"}, {"expense_description": "Dinner", "amount": 42.0, "issue_type": "missing_receipt", "severity": "warning"}], "mismatched_amounts": [{"expense_description": "Lunch with customer team", "amount": 38.0, "issue_type": "amount_mismatch", "severity": "error"}], "total_issues": 3},
       "expense_limit_result": {"all_compliant": true, "violations": [], "compliant_count": 5, "total_overage": 0.0},
-      "duplicate_check": {"is_duplicate": false, "confidence": 0.0, "similar_claims": [], "reason": "No claim history available"},
+      "duplicate_check": {"is_duplicate": false, "confidence": 0.0, "similar_claims": [], "reason": "No claim history available for comparison"},
       "approval_matrix": {"total_amount": 780.0, "required_level": "director", "auto_approve": true, "special_rules": [], "reason": "Amount $780.00 requires director approval (auto-approve eligible)"}
     },
-    "llm_prompt": "[truncated for display]",
     "llm_raw_response": "[truncated for display]",
     "retry_count": 0,
-    "processing_time_ms": 14600.0
+    "processing_time_ms": 6200.0
   }
 }

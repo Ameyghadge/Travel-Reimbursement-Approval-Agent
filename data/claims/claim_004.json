@@ -48,7 +48,7 @@
       "currency": "USD",
       "vendor": "Cafe",
       "description": "Lunch with customer team",
-      "receipt": {"has_receipt": true, "receipt_format": "image", "receipt_amount_matches": true}
+      "receipt": {"has_receipt": true, "receipt_format": "image", "receipt_amount_matches": false}
     },
     {
       "date": "2025-05-20",
@@ -61,6 +61,6 @@
     }
   ],
   "total_amount": 780.00,
-  "notes": "Emergency trip - production system down at customer site. No time for pre-approval. Manager Bob Smith verbally approved after the fact.",
+  "notes": "Emergency trip - production system down at customer site. No time for pre-approval. Manager Bob Smith verbally approved after the fact. Lunch receipt shows different amount due to split bill with customer (they paid their portion separately).",
   "submitted_at": "2025-06-01T10:00:00Z"
 }

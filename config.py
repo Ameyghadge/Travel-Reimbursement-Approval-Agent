@@ -7,13 +7,13 @@ class Settings(BaseSettings):
     """Application settings loaded from .env with sensible defaults."""
 
     # LLM
-    model_name: str = "Qwen/Qwen2.5-0.5B-Instruct"
-    embedding_model: str = "BAAI/bge-small-en-v1.5"
+    model_name: str = "Qwen/Qwen2.5-1.5B-Instruct"
+    embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
 
     # Inference
-    max_new_tokens: int = 300
+    max_new_tokens: int = 120
     temperature: float = 0.0
-    max_retries: int = 3
+    max_retries: int = 2
 
     # RAG
     top_k_chunks: int = 2
