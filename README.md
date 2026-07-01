@@ -34,10 +34,28 @@ Human reviewer approves/rejects via Streamlit UI
 
 ## Quick Start
 
+### macOS / Linux
+
 ```bash
-python3 -m venv venv && source venv/bin/activate
+python3 -m venv venv
+source venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env
+
+# Run Streamlit UI (recommended for demo)
+streamlit run streamlit_app.py
+
+# Or run API server
+python main.py
+```
+
+### Windows (PowerShell)
+
+```powershell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+Copy-Item .env.example .env
 
 # Run Streamlit UI (recommended for demo)
 streamlit run streamlit_app.py
