@@ -4,7 +4,6 @@ A lightweight agentic AI prototype that evaluates travel expense claims against 
 
 **Stack:** Python + LangGraph + Qwen2.5-1.5B-Instruct (local) + RAG (FAISS + all-MiniLM-L6-v2) + 2 tools + Streamlit UI
 
-100% open-source. No proprietary APIs. Runs on a laptop.
 
 ## How It Works
 
