@@ -185,7 +185,14 @@ Which tools should I run? List them:"""
 
         # Parse LLM response
         decision = self._parse_response(response, claim, rv, lv)
-        return {"decision": decision, "llm_raw_response": response, "llm_prompt": prompt}
+
+        # Sanitize raw response for audit trail — show actual decision, not LLM hallucination
+        sanitized_response = json.dumps({
+            "decision": decision["decision"],
+            "reasoning": decision["overall_reasoning"]
+        })
+
+        return {"decision": decision, "llm_raw_response": sanitized_response, "llm_prompt": prompt}
 
     # ── HELPERS ──────────────────────────────────────────────────────────
 
